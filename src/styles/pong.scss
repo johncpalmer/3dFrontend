@@ -1,0 +1,61 @@
+// Colors
+$twitterBlue: #00aced;
+
+// Look and Feel
+$bubbleWidth: 150px;
+$bubbleHeight: 100px;
+
+body {
+	background: rgba(111,202,235,1);
+	background: -moz-linear-gradient(-45deg, rgba(111,202,235,1) 0%, rgba(0,174,237,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(111,202,235,1)), color-stop(100%, rgba(0,174,237,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(111,202,235,1) 0%, rgba(0,174,237,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(111,202,235,1) 0%, rgba(0,174,237,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(111,202,235,1) 0%, rgba(0,174,237,1) 100%);
+	background: linear-gradient(135deg, rgba(111,202,235,1) 0%, rgba(0,174,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fcaeb', endColorstr='#00aeed', GradientType=1 );
+}
+
+.personContainer {
+	margin: 0 auto;
+	width: 500px;
+	height: 400px;
+}
+
+.person1View {
+	width: 200px;
+	height: 400px;
+	background-color: white;
+	border-color: black;
+	float: left;
+	display: inline;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	position: relative;
+}
+
+.person2View {
+	width: 200px;
+	height: 400px;
+	background-color: white;
+	border-color: black;
+	vertical-align: top;
+	margin-left: 15px;
+	margin-right: 15px;
+	float: right;
+	text-align: center;
+	position: relative;
+}
+
+.speechBubble {
+	width: $bubbleWidth;
+	height: $bubbleHeight;
+	background-color: white;
+	border-radius: 5px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	word-wrap: break-word;
+	vertical-align: top;
+}

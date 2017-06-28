@@ -1,0 +1,25 @@
+This is a Pong game I made today.
+
+
+To run the game, navigate to the backendWork director and run:
+
+	npm install
+
+Then run:
+
+	node server.js
+
+
+Enter the frontendWork directory and run:
+
+	npm install
+
+Then run:
+
+	node index.js
+
+
+
+To play, open a browser window and navigate to localhost port 3000.
+
+Once 2 players have joined, the game will begin.
