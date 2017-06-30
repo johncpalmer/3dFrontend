@@ -44,7 +44,7 @@ module.exports = {
     },
     {
       test: /\.mp4$/,
-      loader: 'url?limit=10000&mimetype=video/mp4'
+      loader: 'url-loader?&limit=10000&mimetype=video/mp4'
     },
     {
       test: /\.(jpe?g|png|gif|svg)$/i,

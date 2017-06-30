@@ -33,10 +33,10 @@ class PongContainer extends Component {
 		    	draftingMessage: "",
 		    });
 		    socket.emit('sendMessage', {
-			    	personNumber: store.personNumber,
+			    	personNumber: this.state.personNumber,
 			    	message: this.state.draftingMessage,
 			    });
-		    setInterval(() => {
+		    setTimeout(() => {
 		    	this.setState({
 		    		message: "",
 		    	});
@@ -51,14 +51,16 @@ class PongContainer extends Component {
 	}
 
 	showMessage(message) {
-		this.setState({
-			otherMessage: message,
-		});
-		setInterval(() => {
+		if (message.personNumber != this.state.personNumber) {
+			this.setState({
+				otherMessage: message.message,
+			});
+			setTimeout(() => {
 		    	this.setState({
 		    		otherMessage: "",
 		    	});
 		    }, 5000);
+		}
 	}
 
 	handleKeyPress(e) {
@@ -83,17 +85,28 @@ class PongContainer extends Component {
 	}
 
 	render() {
-		var speechBubble1 = this.state.message && (<p className="speechBubble"> {this.state.message} </p>);
-		var speechBubble2 = this.state.otherMessage && (<p className="speechBubble"> {this.state.otherMessage} </p>);
+		// var speechBubble1 = this.state.message && (<p className="speechBubble"> {this.state.message} </p>);
+		// var speechBubble2 = this.state.otherMessage && (<p className="speechBubble"> {this.state.otherMessage} </p>);
+
+		var speechBubble1, speechBubble2;
+		if (this.state.personNumber == 1) {
+			speechBubble1 = this.state.message && (<p className="speechBubble"> {this.state.message} </p>);
+			speechBubble2 = this.state.otherMessage && (<p className="speechBubble"> {this.state.otherMessage} </p>);
+		} else {
+			speechBubble2 = this.state.message && (<p className="speechBubble"> {this.state.message} </p>);
+			speechBubble1 = this.state.otherMessage && (<p className="speechBubble"> {this.state.otherMessage} </p>);
+		}
 
 		return (
 			<div className="container">
 				<div className="personContainer"> 
 					<div className="person1View"> 
+						<video className="person2View" src={require("../assets/john.mp4")} autoPlay loop />
 						{speechBubble1}
 					</div>
 					<div className="person2View">
-						<img className="person2View" src={require("../assets/brennan.png")} />
+						<video className="person2View" src={require("../assets/brennan.mp4")} autoPlay loop />
+						{speechBubble2}
 					</div>
 				</div>
 				

@@ -1,7 +1,7 @@
 'use strict';
 import ApiMethods from './ApiMethods';
 
-const apiEndpoint = process.env.NODE_ENV === "production" ? "https://pong-demo-nyc.herokuapp.com/" : "http://localhost:5000/";
+const apiEndpoint = process.env.NODE_ENV === "production" ? "https://mvp3dbackend.herokuapp.com/" : "http://localhost:5000/";
 
 console.log("api endpoint: " + apiEndpoint);
 

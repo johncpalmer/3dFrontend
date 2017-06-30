@@ -51,6 +51,7 @@ body {
 .speechBubble {
 	width: $bubbleWidth;
 	height: $bubbleHeight;
+	position: absolute;
 	background-color: white;
 	border-radius: 5px;
 	border-color: black;
