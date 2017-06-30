@@ -5,7 +5,8 @@ import keydown from 'react-keydown';
 import PongApi from './PongApi';
 import './styles/pong.scss';
 const io = require('socket.io-client');
-const socket = io.connect('http://localhost:5000');
+const apiEndpoint = process.env.NODE_ENV === "production" ? "https://mvp3dbackend.herokuapp.com" : "http://localhost:5000";
+const socket = io.connect(apiEndpoint);
 const movementSize = 18;
 
 @observer
