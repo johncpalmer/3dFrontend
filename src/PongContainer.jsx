@@ -102,11 +102,11 @@ class PongContainer extends Component {
 			<div className="container">
 				<div className="personContainer"> 
 					<div className="person1View"> 
-						<video className="person2View" src={require("../assets/john.mp4")} autoPlay loop />
+						<video className="person2View" src={require("../assets/john.mp4")} autoPlay loop muted />
 						{speechBubble1}
 					</div>
 					<div className="person2View">
-						<video className="person2View" src={require("../assets/brennan.mp4")} autoPlay loop />
+						<video className="person2View" src={require("../assets/brennan.mp4")} autoPlay loop muted />
 						{speechBubble2}
 					</div>
 				</div>
